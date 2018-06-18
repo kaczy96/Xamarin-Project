@@ -12,7 +12,15 @@ using Android.Widget;
 
 namespace Project.Model
 {
-    class Ranking
+    public class Ranking
     {
+        private int Id { get; set; }
+        private int Score { get; set; }
+
+        public Ranking(int Id, int Score)
+        {
+            this.Id = Id;
+            this.Score = Score;
+        }
     }
 }

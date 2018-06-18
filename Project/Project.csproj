@@ -57,6 +57,8 @@
   <ItemGroup>
     <Compile Include="Activity\MainActivity.cs" />
     <Compile Include="Common\Common.cs" />
+    <Compile Include="Model\Question.cs" />
+    <Compile Include="Model\Ranking.cs" />
     <Compile Include="Resources\Resource.Designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -93,6 +95,9 @@
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Xamarin.Android.Support.Design" Version="27.0.2" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Resources\Raw\" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
