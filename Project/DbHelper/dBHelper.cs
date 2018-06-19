@@ -11,6 +11,7 @@ using Android.OS;
 using Android.Runtime;
 using Android.Views;
 using Android.Widget;
+using static Android.Service.Notification.NotificationListenerService;
 
 namespace Project.DbHelper
 {
@@ -117,7 +118,7 @@ namespace Project.DbHelper
 
         public List<Ranking> GetRanking()
         {
-            List<Ranking> 1stRanking = new List<Ranking>();
+            List<Ranking> lstRanking = new List<Ranking>();
             SQLiteDatabase db = this.WritableDatabase;
         }
     }
