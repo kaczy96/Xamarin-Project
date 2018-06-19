@@ -106,5 +106,19 @@ namespace Project.DbHelper
         {
             
         }
+
+        public void InsertScore(int score)
+        {
+            String query = $"INSERT INTO Ranking(Score) VALUES ({score})";
+            SQLiteDatabase db = this.WritableDatabase;
+            db.ExecSQL(query);
+
+        }
+
+        public List<Ranking> GetRanking()
+        {
+            List<Ranking> 1stRanking = new List<Ranking>();
+            SQLiteDatabase db = this.WritableDatabase;
+        }
     }
 }
