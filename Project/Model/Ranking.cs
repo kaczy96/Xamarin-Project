@@ -7,6 +7,7 @@ using Android.App;
 using Android.Content;
 using Android.OS;
 using Android.Runtime;
+using Android.Service.Notification;
 using Android.Views;
 using Android.Widget;
 
@@ -21,6 +22,11 @@ namespace Project.Model
         {
             this.Id = Id;
             this.Score = Score;
+        }
+
+        public static implicit operator NotificationListenerService.Ranking(Ranking v)
+        {
+            throw new NotImplementedException();
         }
     }
 }

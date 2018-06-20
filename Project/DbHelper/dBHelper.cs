@@ -6,6 +6,7 @@ using System.Text;
 
 using Android.App;
 using Android.Content;
+using Android.Database;
 using Android.Database.Sqlite;
 using Android.OS;
 using Android.Runtime;
@@ -120,6 +121,31 @@ namespace Project.DbHelper
         {
             List<Ranking> lstRanking = new List<Ranking>();
             SQLiteDatabase db = this.WritableDatabase;
+            ICursor c;
+            try
+            {
+                c = db.RawQuery("SELECT * FROM Ranking ORDER BY Score", null);
+                if (c == null) return null;
+                c.MoveToNext();
+                do
+                {
+                    int Id = c.GetInt(c.GetColumnIndex("Id"));
+                    int Score = c.GetInt(c.GetColumnIndex("Score"));
+                    Ranking ranking = new Model.Ranking(Id, Score);
+                    lstRanking.Add(ranking);
+
+                }
+                while (c.MoveToNext());
+                c.Close();
+            }
+            catch { }
+            db.Close();
+            return lstRanking;
+        }
+
+        public List<Question> GetQuestionsMode(string mode)
+        {
+            List<Question> lstQuestion = new List<Question>();
         }
     }
 }
